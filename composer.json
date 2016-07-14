@@ -37,14 +37,14 @@
     ],
     "license": "LGPL",
     "minimum-stability": "dev",
-    "name": "pear/spreadsheet_excel_writer",
+    "name": "atua/spreadsheet_excel_writer",
     "support": {
         "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Spreadsheet_Excel_Writer",
         "source": "https://github.com/pear/Spreadsheet_Excel_Writer"
     },
     "type": "library",
     "require": {
-        "pear/pear": "*",
+        "pear/pear-core-minimal": "*",
         "pear/ole": "*",
         "php": ">=5.3.3"
     },
