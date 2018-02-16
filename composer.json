@@ -35,7 +35,7 @@
     "include-path": [
         "./"
     ],
-    "license": "LGPL",
+    "license": "LGPL-3.0-or-later",
     "minimum-stability": "dev",
     "name": "atua/spreadsheet_excel_writer",
     "support": {
