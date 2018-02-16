@@ -36,7 +36,6 @@
         "./"
     ],
     "license": "LGPL-3.0-or-later",
-    "minimum-stability": "dev",
     "name": "atua/spreadsheet_excel_writer",
     "support": {
         "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=Spreadsheet_Excel_Writer",
