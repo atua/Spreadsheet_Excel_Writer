@@ -375,6 +375,22 @@ class Spreadsheet_Excel_Writer_Worksheet extends Spreadsheet_Excel_Writer_BIFFwr
     */
     public $_input_encoding;
 
+    public $activesheet;
+    public $firstsheet;
+    public $title_colmax;
+    public $_print_gridlines;
+    public $_screen_gridlines;
+    public $_print_headers;
+    public $_hbreaks;
+    public $_vbreaks;
+    public $_protect;
+    public $_password;
+    public $_col_sizes;
+    public $_row_sizes;
+    public $_zoom;
+    public $_print_scale;
+    public $_dv;
+
     /**
     * Constructor
     *
@@ -1232,6 +1248,9 @@ class Spreadsheet_Excel_Writer_Worksheet extends Spreadsheet_Excel_Writer_BIFFwr
             @_ = $this->_substituteCellref(@_);
     }*/
 
+      if (is_null($token))
+        $token = '';
+
         if (preg_match("/^([+-]?)(?=\d|\.\d)\d*(\.\d*)?([Ee]([+-]?\d+))?$/", $token)) {
             // Match number
             return $this->writeNumber($row, $col, $token, $format);
@@ -1367,7 +1386,7 @@ class Spreadsheet_Excel_Writer_Worksheet extends Spreadsheet_Excel_Writer_BIFFwr
     */
     protected function _substituteCellref($cell)
     {
-        $cell = strtoupper($cell);
+        $cell = strtoupper($cell ?? '');
 
         // Convert a column range: 'A:A' or 'B:G'
         if (preg_match("/([A-I]?[A-Z]):([A-I]?[A-Z])/", $cell, $match)) {
@@ -1941,6 +1960,8 @@ class Spreadsheet_Excel_Writer_Worksheet extends Spreadsheet_Excel_Writer_BIFFwr
 
     protected function _writeUrlRange($row1, $col1, $row2, $col2, $url, $string = '', $format = null)
     {
+      if (is_null($url))
+        $url = '';
 
         // Check for internal/external sheet links or default to web link
         if (preg_match('[^internal:]', $url)) {

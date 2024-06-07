@@ -244,6 +244,10 @@ class Spreadsheet_Excel_Writer_Format extends PEAR
     */
     public $_right_color;
 
+    public $_BIFF_version;
+    public $_diag;
+    public $_diag_color;
+
     /**
     * Constructor
     *
