@@ -385,11 +385,12 @@ class Spreadsheet_Excel_Writer_Worksheet extends Spreadsheet_Excel_Writer_BIFFwr
     public $_vbreaks;
     public $_protect;
     public $_password;
-    public $_col_sizes;
+    public $col_sizes;
     public $_row_sizes;
     public $_zoom;
     public $_print_scale;
     public $_dv;
+    public $offset;
 
     /**
     * Constructor
